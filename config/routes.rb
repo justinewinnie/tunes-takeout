@@ -54,6 +54,11 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get '/suggestions' => 'suggestions#index'
+
+  root 'suggestions#index'
+
+  post '/suggestions' => 'suggestions#show', as: 'search'
+
+  
 
 end

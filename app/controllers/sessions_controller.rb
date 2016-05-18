@@ -1,5 +1,9 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
 end
+
+# def current_weather
+#    HTTParty.get("http://api.openweathermap.org/data/2.5/weather?q=#{city}").parsed_response
+#  end
 
 # class MonstersController < ApplicationController
 #   def index

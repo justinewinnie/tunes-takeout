@@ -55,6 +55,11 @@ The major requirement for this project is to integrate the __Yelp Search API__ a
 
 ### API Wrappers:
 - `TunesTakeoutWrapper`: Wraps interactions with the _Tunes & Takeout API_ by leveraging the [HTTParty gem](https://github.com/jnunemaker/httparty). Should reside in `lib/`.
+- custom gem that interacts with Charles' API.
+- users can go to our app and search with a keyword and then Charles' API returns a suggestion. we parse the returned hash, go find the correlating info from spotify and yelp and return it.
+- we will have a database of users once we authenticate through spotify 
+
+
 
 ### Controllers
 #### Sessions

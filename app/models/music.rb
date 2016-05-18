@@ -1,10 +1,21 @@
-require 'httparty'
 require 'rspotify'
 
 class Music < ActiveRecord::Base
   # receives and models data retrieved from the Spotify API
+  BASE_URL = "https://developer.spotify.com/web-api/"
+  attr_reader :
+
+  def initialize(data)
+    @artist
+  end
+
+
 end
 
+# Includes name of the music item, linking to appropriate Spotify page
+# - Includes type of the music item (artist, album, track, or playlist)
+# - Includes photo/album cover of the music item
+# - Includes embedded Spotify player if appropriate (optional)
 
 # require 'httparty'
 #
