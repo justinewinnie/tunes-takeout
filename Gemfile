@@ -31,6 +31,8 @@ gem 'rest-client'
 
 gem 'omniauth-oauth2', '~> 1.3.1'
 
+gem 'dotenv-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

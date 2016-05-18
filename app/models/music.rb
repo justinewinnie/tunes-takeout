@@ -6,7 +6,9 @@ class Music < ActiveRecord::Base
   attr_reader :
 
   def initialize(data)
-    @artist
+    @artist = data["artist"]
+    @album = data["album"]
+    @track = data["track"]
   end
 
 
