@@ -3,7 +3,7 @@ require 'rspotify'
 class Music < ActiveRecord::Base
   # receives and models data retrieved from the Spotify API
   BASE_URL = "https://developer.spotify.com/web-api/"
-  attr_reader :
+  attr_reader :artist, :album, :track
 
   def initialize(data)
     @artist = data["artist"]
