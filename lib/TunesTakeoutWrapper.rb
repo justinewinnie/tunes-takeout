@@ -7,6 +7,8 @@ class TunesTakeoutWrapper
    @data = HTTParty.get(BASE_URL + "v1/suggestions/search?query=" + keyword).parsed_response
  end
 
+
+
  # authenticate users before these
  # def self.add(suggestion)
  # end

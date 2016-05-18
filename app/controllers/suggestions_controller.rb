@@ -9,8 +9,8 @@ class SuggestionsController < ApplicationController
   end
 
   def show
-    @param_results = TunesTakeoutWrapper.search(params[:keyword])
+    @results = TunesTakeoutWrapper.search(params[:keyword])
   end
 
-  
+
 end
