@@ -59,7 +59,8 @@ Rails.application.routes.draw do
 
   post 'suggestions' => 'suggestions#show', as: 'search'
 
-  get '/login' => 'sessions#new' 
+  get '/login' => 'sessions#new'
+  # post '/login' => 'sessions#create'
   get 'auth/:provider/callback' => 'sessions#create'
 
   get '/suggestions/new' => 'suggestions#new'

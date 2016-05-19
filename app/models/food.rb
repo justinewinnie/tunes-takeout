@@ -20,11 +20,4 @@ class Food < ActiveRecord::Base
     self.new(data)
   end
 
-  def self.list(results)
-    @foods = []
-    results.each do |suggestion|
-      @foods << suggestion["food_id"]
-    end
-  end
-
 end

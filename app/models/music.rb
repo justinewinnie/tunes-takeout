@@ -3,12 +3,13 @@ require 'rspotify'
 class Music < ActiveRecord::Base
   # receives and models data retrieved from the Spotify API
   BASE_URL = "https://api.spotify.com"
-  attr_reader :artist, :album, :track
+  attr_reader :artist, :album, :track, :type
 
   def initialize(data = {})
       @album = data[:album],
       @artist = data[:artist],
-      @track = data[:track]
+      @track = data[:track],
+      @music_type = data[:music_type]
   end
 
   def self.search(music_id, music_type)
@@ -20,10 +21,20 @@ class Music < ActiveRecord::Base
     data[:album] = @album
     data[:artist] = @artist
     data[:track] = @track
+    data[:music_type] = music_type
 
     self.new(data)
   end
 
+  def get_type(music)
+    if music.music_type == "album"
+      music.album
+    elsif music.music_type == "artist"
+      music.artist
+    elsif music.music_type == "track"
+      music.track
+    end
+  end
 end
 
 # Includes name of the music item, linking to appropriate Spotify page
