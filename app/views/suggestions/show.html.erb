@@ -1,1 +1,15 @@
-<%=@results%>
+<!-- <%=@results.each do |entry| %>
+<%= puts entry %>
+<% end %> -->
+
+
+<%#= @results["suggestions"].each do |entry| %>
+  <%#= "id: #{entry["id"]}\n\n" %> <br>
+  <%#= "food id: #{entry["food_id"]}\n" %> <br>
+  <%#= "music id: #{entry["music_id"]}\n" %> <br>
+  <%# end %>
+
+ "FOODFOODFOOD:
+<%= @results["suggestions"].each do |suggestion| %><br>
+  <%= Food.search(suggestion["food_id"]).name %><br>
+<% end %>
