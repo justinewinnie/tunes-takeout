@@ -57,9 +57,21 @@ Rails.application.routes.draw do
 
   root 'suggestions#index'
 
-  post '/suggestions' => 'suggestions#show', as: 'search'
+  post 'suggestions' => 'suggestions#show', as: 'search'
 
-  get "/auth/:provider/callback" => 'sessions#create'
+  get '/login' => 'sessions#new' 
+  get 'auth/:provider/callback' => 'sessions#create'
+
+  get '/suggestions/new' => 'suggestions#new'
+  post '/suggestions/new' => 'suggestions#create'
+
+  delete '/logout' => 'sessions#destroy'
+
+  get '/users/:user_id/favorites' => 'users#favorites'
+
+  get '/suggestions/:user_id/favorites/new' => 'suggestions#new_fave'
+  post '/suggestions/:user_id/favorites/new' => 'suggestions#create_fave'
+  delete '/suggestions/:user_id/favorites/:fave_id' => 'suggestions#destroy_fave'
 
 
 

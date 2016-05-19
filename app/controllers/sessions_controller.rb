@@ -1,8 +1,12 @@
 class SessionsController < ApplicationController
 
+  def new
+    @user
+  end
+
   def create
     auth_hash = request.env['omniauth.auth']
-    # @user = auth_hash["info"]["uid"]
+    @user = auth_hash["info"]["uid"]
   end
 
   # def create

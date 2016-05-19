@@ -10,16 +10,9 @@ class SuggestionsController < ApplicationController
 
   def show
     @results = TunesTakeoutWrapper.search(params[:keyword])
-    # @food = show_food(@results)
+    # @foods = Food.search(@results.each do |suggestion| suggestion["food_id"] end)
+
+    # @music =
   end
-
-  # def show_food(results)
-  #   Food.find(results["suggestions"][0]["food_id"])
-  # end
-  #
-  # Food.find(@results.id)
-  #
-  # Music.find(@results.id)
-
 
 end

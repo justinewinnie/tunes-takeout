@@ -1,15 +1,8 @@
-<!-- <%=@results.each do |entry| %>
-<%= puts entry %>
-<% end %> -->
 
 
-<%#= @results["suggestions"].each do |entry| %>
-  <%#= "id: #{entry["id"]}\n\n" %> <br>
-  <%#= "food id: #{entry["food_id"]}\n" %> <br>
-  <%#= "music id: #{entry["music_id"]}\n" %> <br>
-  <%# end %>
+ "Pairings:"
+<%#= @results["suggestions"].each do |pairing| %><br>
+  <%#= Music.search(pairing["music_id"], pairing["music_type"]) %> <br>
+<%# end %>
 
- "FOODFOODFOOD:
-<%= @results["suggestions"].each do |suggestion| %><br>
-  <%= Food.search(suggestion["food_id"]).name %><br>
-<% end %>
+<%= Food.list(@results).name %><br>

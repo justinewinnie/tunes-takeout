@@ -5,14 +5,22 @@ class Music < ActiveRecord::Base
   BASE_URL = "https://api.spotify.com"
   attr_reader :artist, :album, :track
 
-  def initialize(data)
-    @artist = data["artist"]
-    @album = data["album"]
-    @track = data["track"]
+  def initialize(data = {})
+      @album = data[:album],
+      @artist = data[:artist],
+      @track = data[:track]
   end
 
-  def self.find(id)
-    data = HTTParty.get(BASE_URL + "#{id}").parsed_response
+  def self.search(music_id, music_type)
+    music_type == "album" ? @album = RSpotify::Album.find(music_id) : @album = nil
+    music_type == "artist" ? @artist = RSpotify::Artist.find(music_id) : @artist = nil
+    music_type == "track" ? @track = RSpotify::Track.find(music_id) : @track = nil
+
+    data = {}
+    data[:album] = @album
+    data[:artist] = @artist
+    data[:track] = @track
+
     self.new(data)
   end
 
