@@ -2,6 +2,5 @@
 
  "Pairings:"
 <%= @results["suggestions"].each do |pairing| %><br>
-  <%= Music.search(pairing["music_id"], pairing["music_type"]) %>
-  <%= Food.search(pairing["food_id"]).name %> <br>
+  <%= render partial: 'suggestion' %>
 <% end %>
