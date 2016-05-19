@@ -12,6 +12,7 @@
   </header>
   <% if current_user %>
     <h2>Welcome, <%=current_user.name%></h2>
+    <img src="<%=current_user.image%>" alt="Smiley face">
    	<%= link_to "Logout", logout_path, method: "delete" %>
    <% else %>
      <%= link_to "Login", "/auth/spotify" %>
