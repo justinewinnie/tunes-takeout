@@ -22,6 +22,19 @@ class Music < ActiveRecord::Base
       # @name_url = "http://open.spotify.com/" + music_object.type/ + music_object.id/
   end
 
+  # def self.music_list(results)
+  # music_list = {}
+  #   if results != nil
+  #       results["suggestions"].each do |pairing|
+  #         music = Music.search(pairing["music_id"], pairing["music_type"])
+  #         music_list[:music] = music
+  #         music_list[:name] = music.name
+  #         music_list[:url] = music.url
+  #       end
+  #   end
+  #   music_list
+  # end
+
   def self.search(music_id, music_type)
     if music_type == "album"
       music_object = RSpotify::Album.find(music_id)
