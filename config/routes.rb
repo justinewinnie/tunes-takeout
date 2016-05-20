@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   post 'suggestions' => 'suggestions#index', as: 'search'
 
   get '/login' => 'sessions#new'
+
   get 'auth/:provider/callback' => 'sessions#create'
 
   get '/suggestions/new' => 'suggestions#new'
