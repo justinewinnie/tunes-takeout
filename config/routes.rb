@@ -62,8 +62,12 @@ Rails.application.routes.draw do
 
   post 'suggestions' => 'suggestions#index', as: 'search'
 
+<<<<<<< HEAD
   get '/login' => 'sessions#new'
 
+=======
+  get '/login' => 'sessions#new' 
+>>>>>>> parent of 63de8c4... oops.
   get 'auth/:provider/callback' => 'sessions#create'
 
   get '/suggestions/new' => 'suggestions#new'
