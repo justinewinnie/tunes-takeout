@@ -5,7 +5,7 @@
 
 <% if @results != nil %>
   <%= @results["suggestions"].each do |pairing| %><br>
-    <%= Music.search(pairing["music_id"], pairing["music_type"]).music %> <br>
+    <%= Music.search(pairing["music_id"], pairing["music_type"]).name %> <br>
     <%= Food.search(pairing["food_id"]).name %> <br>
   <% end %>
 <% end %>
