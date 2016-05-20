@@ -2,15 +2,10 @@
 
 
  "Pairings:"
-<%#= @results["suggestions"].each do |pairing| %><br>
-  <%#= Music.search(pairing["music_id"], pairing["music_type"]) %> <br>
-<%# end %>
 
 <% if @results != nil %>
   <%= @results["suggestions"].each do |pairing| %><br>
-    <%= Music.search(pairing["music_id"], pairing["music_type"]) %> <br>
+    <%= Music.search(pairing["music_id"], pairing["music_type"]).music %> <br>
     <%= Food.search(pairing["food_id"]).name %> <br>
   <% end %>
 <% end %>
-
-<%#= Food.list(@results).name %><br>
