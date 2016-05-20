@@ -5,7 +5,7 @@ class SuggestionsController < ApplicationController
   attr_reader :show
 
   def index
-
+    # @results = TunesTakeoutWrapper.search(params[:keyword])
   end
 
   def show

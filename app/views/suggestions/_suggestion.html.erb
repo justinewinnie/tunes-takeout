@@ -1,2 +1,5 @@
-<%= Music.search(pairing["music_id"], pairing["music_type"]) %>
-<%= Food.search(pairing["food_id"]).name %> <br>
+"Top 20:"
+<%= @results["suggestions"].each do |pairing| %><br>
+  <%= Music.search(pairing["music_id"], pairing["music_type"]) %> <br>
+  <%= Food.search(pairing["food_id"]).name %> <br>
+<% end %>
