@@ -57,17 +57,10 @@ Rails.application.routes.draw do
 
   root 'suggestions#index'
 
-  get '/suggestions' =>  'suggestions#show'
-  post '/suggestions' =>  'suggestions#show'
+  post 'suggestions' => 'suggestions#show', as: 'search'
 
-  post 'suggestions' => 'suggestions#index', as: 'search'
-
-<<<<<<< HEAD
   get '/login' => 'sessions#new'
-
-=======
-  get '/login' => 'sessions#new' 
->>>>>>> parent of 63de8c4... oops.
+  # post '/login' => 'sessions#create'
   get 'auth/:provider/callback' => 'sessions#create'
 
   get '/suggestions/new' => 'suggestions#new'
@@ -80,19 +73,6 @@ Rails.application.routes.draw do
   get '/suggestions/:user_id/favorites/new' => 'suggestions#new_fave'
   post '/suggestions/:user_id/favorites/new' => 'suggestions#create_fave'
   delete '/suggestions/:user_id/favorites/:fave_id' => 'suggestions#destroy_fave'
-
-
-#   root GET    /                                                  suggestions#index
-#          search POST   /suggestions(.:format)                             suggestions#index
-#           login GET    /login(.:format)                                   sessions#new
-#                 GET    /auth/:provider/callback(.:format)                 sessions#create
-# suggestions_new GET    /suggestions/new(.:format)                         suggestions#new
-#                 POST   /suggestions/new(.:format)                         suggestions#create
-#          logout DELETE /logout(.:format)                                  sessions#destroy
-#                 GET    /users/:user_id/favorites(.:format)                users#favorites
-#                 GET    /suggestions/:user_id/favorites/new(.:format)      suggestions#new_fave
-#                 POST   /suggestions/:user_id/favorites/new(.:format)      suggestions#create_fave
-#                 DELETE /suggestions/:user_id/favorites/:fave_id(.:format) suggestions#destroy_fave
 
 
 

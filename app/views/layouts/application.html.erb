@@ -10,14 +10,14 @@
   <header>
     <h1>TunesTakeout</h1>
   </header>
-<<<<<<< HEAD
+
   <% if current_user %>
     <h2>Welcome, <%=current_user.name%></h2>
     <img src="<%=current_user.image%>" alt="Smiley face">
    	<%= link_to "Logout", logout_path, method: "delete" %>
     <h2>Search</h2>
-      <%#= form_tag search_path do %>
-      <%= form_tag(controller: "suggestions", action: "search", method: "post") %>
+      <%= form_tag search_path do %>
+      <%#= form_tag(controller: "suggestions", action: "search", method: "post") %>
         <%= label_tag :keyword %>
         <%= text_field_tag :keyword %>
         <%= submit_tag("Search") %>
@@ -26,8 +26,7 @@
      <%= link_to "Login", "/auth/spotify" %>
      <%#= link_to "View Favorites", ""%>
    <% end %>
-=======
->>>>>>> parent of 63de8c4... oops.
+
 
 
 <%= yield %>
