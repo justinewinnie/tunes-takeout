@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   post 'suggestions' => 'suggestions#show', as: 'search'
 
   get '/login' => 'sessions#new'
-  # post '/login' => 'sessions#create'
+
   get 'auth/:provider/callback' => 'sessions#create'
 
   get '/suggestions/new' => 'suggestions#new'
@@ -68,11 +68,13 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
-  get '/users/:user_id/favorites' => 'users#favorites'
+  # get '/users/favorites' => "suggestions#favorites"
+  # get '/users/:user_id/favorites' => 'users#favorite', as: 'favorites'
+  # post "users/:user_id/favorites" => "users#favorite", as: 'favorite'
+  # delete "users/:user_id/favorites" => "users#destroy", as: 'favorites'
 
-  get '/suggestions/:user_id/favorites/new' => 'suggestions#new_fave'
-  post '/suggestions/:user_id/favorites/new' => 'suggestions#create_fave'
-  delete '/suggestions/:user_id/favorites/:fave_id' => 'suggestions#destroy_fave'
+
+
 
 
 
