@@ -23,22 +23,18 @@ class SuggestionsController < ApplicationController
   end
 
   def favorite
-    user = current_user.uid
-    response = TunesTakeoutWrapper.favorite(user, params["suggestion"])
+    response = TunesTakeoutWrapper.favorite(current_user.uid, params["suggestion_id"])
     redirect_to root_path
   end
 
-  # def add_favorite
-  #   suggestion_id, current_user.uid
-  # end
-  #
   def favorites
-    fave_array = []
+    @data = []
     faves = TunesTakeoutWrapper.favorites_by_user(current_user.uid)
     faves["suggestions"].each do |id|
-      fave_array << TunesTakeoutWrapper.search_by_id(id)
+      info = HTTParty.get("https://tunes-takeout-api.herokuapp.com/v1/suggestions/" + id).parsed_response
+      @data << info["suggestion"]
     end
-    @data = Food.hashify(fave_array)
+    @data
   end
 
   #   {

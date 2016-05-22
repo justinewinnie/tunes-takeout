@@ -71,6 +71,7 @@ Rails.application.routes.draw do
 
   # get '/users/favorites' => "suggestions#favorites"
   get '/favorites' => 'suggestions#favorites', as: 'favorites'
+  post '/suggestions/:suggestion_id/favorite' =>'suggestions#favorite', as: 'favorite'
   # post "users/:user_id/favorites" => "users#favorite", as: 'favorite'
   # delete "users/:user_id/favorites" => "users#destroy", as: 'favorites'
 
