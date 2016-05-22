@@ -20,11 +20,19 @@ class Food < ActiveRecord::Base
     self.new(data)
   end
 
-  def self.list(results)
-    @foods = []
-    results.each do |suggestion|
-      @foods << suggestion["food_id"]
+  def self.hashify(data)
+    if data != nil
+      sugg_array = []
+      data.each do |hash|
+        sugg_hash = {}
+        sugg_hash["id"] = hash["id"]
+        sugg_hash["food_id"] = hash["food_id"]
+        sugg_hash["music_id"] = hash["music_id"]
+        sugg_hash["music_type"] = hash["music_type"]
+        sugg_array << sugg_hash
+      end
     end
+    sugg_array
   end
 
 end

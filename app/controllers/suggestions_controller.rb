@@ -7,14 +7,14 @@ class SuggestionsController < ApplicationController
 
   def index
     @top_twenty = TunesTakeoutWrapper.top_twenty
-    @top_pairings = []
-    @top_twenty.each do |suggestion_id|
-      suggestion = TunesTakeoutWrapper.search_by_id(suggestion_id)
-      food = Food.search(suggestion["suggestion"]["food_id"]).name
-      music = Music.search(suggestion["suggestion"]["music_id"], suggestion["suggestion"]["music_type"]).name
-      @top_pairings << [music, food, suggestion["suggestion"]["id"]]
-    end
-    @top_pairings
+    # @top_pairings = []
+    # @top_twenty.each do |suggestion_id|
+    #   suggestion = TunesTakeoutWrapper.search_by_id(suggestion_id)
+    #   food = Food.search(suggestion["suggestion"]["food_id"]).name
+    #   music = Music.search(suggestion["suggestion"]["music_id"], suggestion["suggestion"]["music_type"]).name
+    #   @top_pairings << [music, food, suggestion["suggestion"]["id"]]
+    # end
+    # @top_pairings
     # # @favorites = TunesTakeoutWrapper.favorite_ids(current_user.uid) if current_user
   end
 

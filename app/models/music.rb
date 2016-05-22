@@ -54,4 +54,17 @@ class Music < ActiveRecord::Base
     # self.new(music_object)
     # binding.pry
   end
+
+  def self.hashify(data)
+    if data != nil
+      sugg_hash = {}
+      data["suggestions"].each do |pairing_info|
+        sugg_hash[:sugg_id] = pairing_info["id"]
+        sugg_hash[:food_id] = pairing_info["food_id"]
+        sugg_hash[:music_id] = pairing_info["music_id"]
+        sugg_hash[:music_type] = pairing_info["music_type"]
+      end
+    end
+    sugg_hash
+  end
 end
