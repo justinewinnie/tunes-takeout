@@ -35,4 +35,11 @@ class Food < ActiveRecord::Base
     sugg_array
   end
 
+  # def self.prettify(sugg_array)
+  #   sugg_array.each do |suggestion|
+  #     @food = Food.search(suggestion[:food_id])
+  #     @music = Music.search(suggestion[:music_id], suggestion[:music_type])
+  #   end
+  # end
+
 end

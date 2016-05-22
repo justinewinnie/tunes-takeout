@@ -1,3 +1,8 @@
 <h1> <%=@heading %> </h1>
 
-<%= Food.hashify(@data) %>
+<% Food.hashify(@data).each do |suggestion| %>
+  <% food = Food.search(suggestion["food_id"]) %>
+  <% music = Music.search(suggestion["music_id"], suggestion["music_type"]) %>
+  <%= food.name %>
+  <%= music.name %>
+<% end %>

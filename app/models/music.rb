@@ -57,14 +57,18 @@ class Music < ActiveRecord::Base
 
   def self.hashify(data)
     if data != nil
-      sugg_hash = {}
-      data["suggestions"].each do |pairing_info|
-        sugg_hash[:sugg_id] = pairing_info["id"]
-        sugg_hash[:food_id] = pairing_info["food_id"]
-        sugg_hash[:music_id] = pairing_info["music_id"]
-        sugg_hash[:music_type] = pairing_info["music_type"]
+      sugg_array = []
+      data.each do |hash|
+        sugg_hash = {}
+        sugg_hash["id"] = hash["id"]
+        sugg_hash["food_id"] = hash["food_id"]
+        sugg_hash["music_id"] = hash["music_id"]
+        sugg_hash["music_type"] = hash["music_type"]
+        sugg_array << sugg_hash
       end
     end
-    sugg_hash
+    sugg_array
   end
+
+
 end
