@@ -17,7 +17,6 @@
    	<%= link_to "Logout", logout_path, method: "delete" %>
     <h2>Search</h2>
       <%= form_tag search_path do %>
-      <%#= form_tag(controller: "suggestions", action: "search", method: "post") %>
         <%= label_tag :keyword %>
         <%= text_field_tag :keyword %>
         <%= submit_tag("Search") %>

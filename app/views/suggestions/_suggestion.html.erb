@@ -3,6 +3,16 @@
 <% Food.hashify(@data).each do |suggestion| %>
   <% food = Food.search(suggestion["food_id"]) %>
   <% music = Music.search(suggestion["music_id"], suggestion["music_type"]) %>
-  <%= food.name %>
-  <%= music.name %>
+  <br>Yum! <%= link_to food.name, food.url %><br>
+  Tunes! <%= link_to music.name, music.external_urls["spotify"] %><br>
 <% end %>
+
+
+<!-- Displays a food recommendation
+ /Includes name of the business, linking to appropriate Yelp page
+Includes photo/logo of the business
+/Displays a music recommendation
+Includes name of the music item, linking to appropriate Spotify page
+Includes type of the music item (artist, album, track, or playlist)
+Includes photo/album cover of the music item
+Includes embedded Spotify player if appropriate (optional) -->
