@@ -24,13 +24,21 @@ class TunesTakeoutWrapper
 
   def self.favorites_by_user(uid)
     data = HTTParty.get(BASE_URL + "v1/users/#{uid}/favorites").parsed_response
-    return data
   end
 
   def self.favorite(uid, suggestion_id)
     HTTParty.post(BASE_URL + "v1/users/#{uid}/favorites", body: {
       "suggestion": "suggestion-id"
       })
+  end
+
+  def self.favorite(user, suggestion)
+    # call API and say user favorited suggestion
+    response = HTTParty.post(BASE_URL + "v1/users/#{user}/favorites",
+    body: {
+      "suggestion": suggestion
+      }.to_json)
+    # need to add error handling
   end
 
 end
