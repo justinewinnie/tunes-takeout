@@ -1,16 +1,6 @@
 
 
-<%# if @results != nil %>
-  <%#= @results["suggestions"].each do |pairing| %><br>
-    <%# music = Music.search(pairing["music_id"], pairing["music_type"]) %> <br>
-    <%#= link_to music.name, music.url %><br>
-    <%#= Food.search(pairing["food_id"]).name %> <br>
-      <%#= form_tag({controller: "suggestions", action: "favorite", method: "post"}) do %>
-      <%#= hidden_field_tag "favorite_hash", 'suggestion_id' %>
-      <%#= submit_tag("Add to favorites") %>
-      <%# end %>
-  <%# end %>
-<%# end %>
 
+<% @heading = "Search Results" %>
 
-Search results: <%= Food.hashify(@results) %>
+<%= render partial: 'suggestion' %>

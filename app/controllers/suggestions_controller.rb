@@ -6,7 +6,7 @@ class SuggestionsController < ApplicationController
   attr_reader :show
 
   def index
-    @top_twenty = TunesTakeoutWrapper.top_twenty
+    @data = TunesTakeoutWrapper.top_twenty
     # @top_pairings = []
     # @top_twenty.each do |suggestion_id|
     #   suggestion = TunesTakeoutWrapper.search_by_id(suggestion_id)
@@ -25,7 +25,7 @@ class SuggestionsController < ApplicationController
 
 
   def show
-    @results = TunesTakeoutWrapper.search(params[:keyword])
+    @data = TunesTakeoutWrapper.search(params[:keyword])
   end
 
   # def add_favorite

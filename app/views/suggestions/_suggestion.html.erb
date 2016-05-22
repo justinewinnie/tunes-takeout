@@ -1,33 +1,3 @@
+<h1> <%=@heading %> </h1>
 
-<% if data != nil %>
-  <% sugg_hash = {}
-  <% data["suggestions"].each do |pairing_info| %>
-  <% sugg_hash[:sugg_id] = pairing_info["id"] %>
-  <% sugg_hash[:food_id] = pairing_info["food_id"] %>
-  <% sugg_hash[:music_id] = pairing_info["music_id"] %>
-  <% sugg_hash[:music_type] = pairing_info["music_type"] %>
-<% end %>
-
-
-
-
-Displays a food recommendation
-Includes name of the business, linking to appropriate Yelp page
-Includes address of the business (optional)
-Includes phone number of the business (optional)
-Includes photo/logo of the business
-
-Displays a music recommendation
-Includes name of the music item, linking to appropriate Spotify page
-Includes type of the music item (artist, album, track, or playlist)
-Includes photo/album cover of the music item
-Includes embedded Spotify player if appropriate (optional)
-
-
-
-
-
-Top 20: [{"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}, {"id"=>"Vz0KQY-RRwADboFB", "food_id"=>"despi-delite-bakery-seattle", "music_id"=>"0CsvsckUEF5oipX8VtYPlw", "music_type"=>"track"}]
-
-Search results
-[{"id"=>"Vz32HYve9AADSFQt", "food_id"=>"cederberg-tea-house-seattle-2", "music_id"=>"0WV7rtgzg8GbHH3VZWcsaW", "music_type"=>"track"}, {"id"=>"V0D2Bz2OhAADuShQ", "food_id"=>"lola-seattle", "music_id"=>"1TtyVbmspHF7rgHAvBoALk", "music_type"=>"track"}, {"id"=>"V0CxYD2OhAADuR9G", "food_id"=>"green-leaf-vietnamese-restaurant-seattle", "music_id"=>"1zKotRGXnrhpFnu9j8sm3p", "music_type"=>"artist"}, {"id"=>"V0D2Bz2OhAADuShR", "food_id"=>"revel-seattle", "music_id"=>"1nHyTyGtnl1vilji0wXXo2", "music_type"=>"track"}, {"id"=>"V0D2CD2OhAADuShS", "food_id"=>"monsoon-restaurant-seattle", "music_id"=>"2bEILkxVU6voGQcapZg7qs", "music_type"=>"album"}, {"id"=>"V0D2CD2OhAADuShT", "food_id"=>"palace-kitchen-seattle", "music_id"=>"0ExZ7MllemtIZ78PLJ0Ppn", "music_type"=>"track"}, {"id"=>"V0D2CD2OhAADuShU", "food_id"=>"phnom-penh-noodle-house-seattle", "music_id"=>"14Y0Ap5rfFKNTh4HeZ8qOv", "music_type"=>"artist"}, {"id"=>"V0D2CD2OhAADuShV", "food_id"=>"pinkaew-thai-cuisine-seattle-3", "music_id"=>"0KNnfLVzsmf2gU4bqJ49At", "music_type"=>"album"}, {"id"=>"V0D2CD2OhAADuShW", "food_id"=>"jodees-desserts-seattle", "music_id"=>"09VW3a9dpv3NGB9TvR7aab", "music_type"=>"album"}, {"id"=>"V0CxYD2OhAADuR9H", "food_id"=>"flying-apron-seattle", "music_id"=>"20iGBwPNTrRSSGLcSzSkyG", "music_type"=>"album"}, {"id"=>"V0D2CD2OhAADuShX", "food_id"=>"rom-mai-thai-seattle", "music_id"=>"2Fed4EYemu3CzYfT06ymJC", "music_type"=>"track"}, {"id"=>"V0D2CD2OhAADuShY", "food_id"=>"seattle-deli-seattle", "music_id"=>"1dUKAmY3jxjtb9tq0OK1w5", "music_type"=>"artist"}, {"id"=>"V0D2CD2OhAADuShZ", "food_id"=>"pams-kitchen-seattle-4", "music_id"=>"0mPKQPhZAJK3yX510EZRbj", "music_type"=>"artist"}, {"id"=>"V0D2CD2OhAADuSha", "food_id"=>"jhanjay-vegetarian-thai-cuisine-seattle", "music_id"=>"0kH1GoabbHkb512HKo13yx", "music_type"=>"artist"}, {"id"=>"Vz9cxvLW7wADpMpG", "food_id"=>"tup-tim-thai-seattle", "music_id"=>"1nymy2xiBdhbyCzbD1wXbu", "music_type"=>"album"}, {"id"=>"Vz32Hove9AADSFQ8", "food_id"=>"three-girls-bakery-seattle", "music_id"=>"2l6Jqx9zAXq97fq8Az0ySO", "music_type"=>"album"}, {"id"=>"Vz9cxvLW7wADpMpH", "food_id"=>"alicia-fusion-bistro-seattle", "music_id"=>"1q2cpnS7rJRdwYeRppro1y", "music_type"=>"album"}, {"id"=>"Vz32Hove9AADSFQ-", "food_id"=>"bahn-thai-restaurant-seattle", "music_id"=>"1VoPyVtSfTp0SMgCv5lbQP", "music_type"=>"album"}, {"id"=>"Vz32Hove9AADSFQ_", "food_id"=>"dahlia-lounge-seattle", "music_id"=>"0pUh9vL0brGUJcVwEQnz1V", "music_type"=>"track"}, {"id"=>"Vz32Hove9AADSFRA", "food_id"=>"arayas-place-seattle-2", "music_id"=>"0fXRcX1ThkiDTbJOdIFz2Q", "music_type"=>"artist"}]
+<%= Food.hashify(@data) %>

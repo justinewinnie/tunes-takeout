@@ -1,12 +1,3 @@
 
-<%# if @results != nil %>
-  <%#= @results["suggestions"].each do |pairing| %><br>
-    <%# music = Music.search(pairing["music_id"], pairing["music_type"]) %> <br>
-    <%#= music.name %>
-    <%#= music.url %>
-    <%#= Food.search(pairing["food_id"]).name %> <br>
-  <%# end %>
-<%# end %>
-
-
-Top 20: <%= Food.hashify(@top_twenty) %>
+<% @heading = "Top 20" %>
+<%= render partial: 'suggestion' %>
