@@ -46,11 +46,4 @@ class Food < ActiveRecord::Base
 
  # [{"id"=>"Vz0KQY-RRwADboE-", "food_id"=>"a-la-mode-pies-seattle", "music_id"=>"1OYLLmDS0pJVFRbUo19vrG", "music_type"=>"album"}, {"id"=>"Vz0KQY-RRwADboEQ", "food_id"=>"old-school-frozen-custard-seattle", "music_id"=>"1hq33mOCO3eLxvgBl0leqP", "music_type"=>"track"}, {"id"=>"Vz0KO4-RRwADbn9t", "food_id"=>"taqueria-la-pasadita-seattle-3", "music_id"=>"0jEsVskTgxfybttvO9gnLK", "music_type"=>"album"}, {"id"=>"Vz0KNY-RRwADbn29", "food_id"=>"sweet-iron-seattle-2", "music_id"=>"0cOpQTKJdCEzz2wplnnyP6", "music_type"=>"artist"}, {"id"=>"Vz0KO4-RRwADbn9c", "food_id"=>"el-taco-loco-seattle-2", "music_id"=>"0qO38KC2CGDmNSOAb2rpzj", "music_type"=>"track"}]
 
-  # def self.prettify(sugg_array)
-  #   sugg_array.each do |suggestion|
-  #     @food = Food.search(suggestion[:food_id])
-  #     @music = Music.search(suggestion[:music_id], suggestion[:music_type])
-  #   end
-  # end
-
 end
