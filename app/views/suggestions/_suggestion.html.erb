@@ -7,15 +7,6 @@
   Tunes! <%= link_to music.name, music.external_urls["spotify"] %><br>
     type: <%= music.type %><br>
     <%= link_to "mark as favorite", favorite_path(suggestion["id"]), method: :post unless current_user.nil? %>
+    <%#= link_to "Unfavorite", delete_favorite_path(suggestion_id: "suggestions"), method: :delete %>
+
 <% end %>
-
-
-
-<!-- Displays a food recommendation
- /Includes name of the business, linking to appropriate Yelp page
-Includes photo/logo of the business
-/Displays a music recommendation
-/Includes name of the music item, linking to appropriate Spotify page
-/Includes type of the music item (artist, album, track, or playlist)
-Includes photo/album cover of the music item
-Includes embedded Spotify player if appropriate (optional) -->

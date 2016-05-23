@@ -46,13 +46,6 @@ class Music < ActiveRecord::Base
     else
       music_object = nil
     end
-    # data = {}
-    # # data[:album] = @album
-    # # data[:artist] = @artist
-    # # data[:track] = @track
-    # data[:music] = @music
-    # self.new(music_object)
-    # binding.pry
   end
 
   def self.hashify(data)

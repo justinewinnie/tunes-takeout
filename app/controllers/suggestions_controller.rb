@@ -27,4 +27,9 @@ class SuggestionsController < ApplicationController
     end
     @data
   end
+
+  # def destroy
+  #   TunesTakeoutWrapper.unfavorite(current_user.uid, params[:id])
+  #   redirect_to favorite_path
+  # end
 end

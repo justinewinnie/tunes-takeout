@@ -28,9 +28,12 @@ class TunesTakeoutWrapper
 
   def self.favorite(uid, suggestion)
     response = HTTParty.post(BASE_URL + "v1/users/#{uid}/favorites",
-    body: {
-      "suggestion": suggestion
-      }.to_json)
+    body: { "suggestion": suggestion }.to_json)
   end
+
+  # def self.unfavorite(uid, suggestion)
+  #   binding.pry
+  #   HTTParty.delete(BASE_URL + "/v1/users/#{uid}/favorites", body: { "suggestion": suggestion }.to_json )
+  # end
 
 end
