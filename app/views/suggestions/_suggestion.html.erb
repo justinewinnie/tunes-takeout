@@ -6,7 +6,7 @@
   <br>Yum! <%= link_to food.name, food.url %><br>
   Tunes! <%= link_to music.name, music.external_urls["spotify"] %><br>
     type: <%= music.type %><br>
-    <%=link_to "mark as favorite", favorite_path(suggestion["id"]), method: :post %>
+    <%= link_to "mark as favorite", favorite_path(suggestion["id"]), method: :post unless current_user.nil? %>
 <% end %>
 
 
